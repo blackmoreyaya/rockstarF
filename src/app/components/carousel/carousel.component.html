@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[0]" alt="Random first slide">
+                </div>
+                <div class="carousel-caption">
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[1]" alt="Random second slide">
+                </div>
+                <div class="carousel-caption">
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[2]" alt="Random third slide">
+                </div>
+                <div class="carousel-caption">
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        <br><br>
+    </div>
+    <!-- <div class="d-md-none d-lg-block d-lg-none d-xl-block">
+        <br><br>
+    </div> -->
+    <br><br>
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <!-- <div class="card">
+            <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna">
+            <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+                <h4 class="card-title">Bologna</h4>
+                <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
+                <p class="card-text">It is the seventh most populous city in Italy, at the heart of a metropolitan area of about one million people. </p>
+                <div class="link d-flex">
+                    <a href="#" class="card-link text-warning">Read More</a>
+                    <a href="#" class="card-link text-warning">Book a Trip</a>
+                </div>
+            </div>
+        </div> -->
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="../assets/img/sf.jpg" height="220px">
+            <div class="card-img-overlay">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">Last updated 3 mins ago</p>
+            </div>
+        </div>
+        <br><br>
+        <!-- <div class="d-block d-sm-none d-none d-sm-block d-md-none">
+            <br>
+            <br>
+        </div> -->
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="../assets/img/baiken.jpg" height="220px">
+            <div class="card-img-overlay">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">Last updated 3 mins ago</p>
+            </div>
+        </div>
+    </div>
+</div>

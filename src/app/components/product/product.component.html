@@ -1,0 +1,120 @@
+<!-- <div class="card">
+    <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+    <div class="card-img-overlay">
+        <a href="#" class="btn btn-light btn-sm">Cooking</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Pasta with Prosciutto</h4>
+        <small class="text-muted cat">
+      <i class="far fa-clock text-info"></i> 30 minutes
+      <i class="fas fa-users text-info"></i> 4 portions
+    </small>
+        <p class="card-text">I love quick, simple pasta dishes, and this is one of my favorite.</p>
+        <a href="#" class="btn btn-info">Read Recipe</a>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+        <div class="views">Oct 20, 12:45PM
+        </div>
+        <div class="stats">
+            <i class="far fa-eye"></i> 1347
+            <i class="far fa-comment"></i> 12
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="card text-white bg-dark"> -->
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let producto of productos">
+        <br>
+        <div class="card ">
+            <div class="hovereffect">
+                <img class="card-img" [src]="producto.imagen[0].nombre" alt="">
+                <div class="overlay">
+                    <!-- <h2 class="imagen">alho</h2> -->
+                    <br><br><br>
+                    <p>
+                        <a (click)="mostrarPreview( producto )" class="info pointer"><img src="../assets/img/ojo.png" height="50px" width="70px"></a>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="card-img-overlay d-flex justify-content-end">
+        <a href="#" class="card-link text-danger like">
+            <i class="fa fa-heart"></i>
+        </a>
+    </div> -->
+            <div class="card-body">
+                <h4 class="card-title">{{ producto.nombre }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ producto.categoria.nombre }}</h6>
+                <p class="card-text">
+                    {{ producto.descripcion }}
+                </p>
+                <ul class="row">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+
+                <div class="buy d-flex justify-content-between align-items-center">
+                    <div class="price ">
+                        <h5 class="mt-4">$ {{ producto.precio }}</h5>
+                    </div>
+                    <a (click)="addWishList(bandera)" class="card-link like">
+                        <div [class]="claseCorazon">
+                            <i class="fa fa-heart pointer"></i>
+                        </div>
+                    </a>
+                    <button class="btn btn-outline-warning mt-3"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-preview></app-preview>
+
+
+
+<!-- <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
+    
+    <div class="view view-cascade overlay text-center"> <img class="card-img-top" src="https://i.imgur.com/9VZGPJF.jpg" alt="">
+        <a>
+            <div class="mask rgba-white-slight"></div>
+        </a>
+    </div>
+    
+    <div class="card-body card-body-cascade text-center">
+    
+        <h4 class="card-title"><strong><a href="">Mobile</a></strong></h4>
+    
+        <p class="card-text">This is a Mobile phone with all the advance features and at best price. </p>
+        <p class="price">$50</p>
+    
+        <ul class="row rating">
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+        </ul>
+        
+<div class="card-footer">
+    <p>ADD TO CART</p>
+</div>
+</div> -->
+
+<!-- 
+
+<div class="hovereffect">
+    <img class="img-responsive" src="http://placehold.it/350x250" alt="">
+    <div class="overlay">
+        <h2>Effect 14</h2>
+        <br><br><br>
+        <p>
+            <a href="#" class="info">LINK HERE</a>
+        </p>
+    </div>
+</div> -->

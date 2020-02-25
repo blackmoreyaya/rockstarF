@@ -1,0 +1,53 @@
+<!-- <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <p>Hello, World!</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+
+<div class="encima animated fadeIn slow" [ngClass]="previewService.oculto">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div> -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <a [href]="producto?.imagen[0].nombre" data-lightbox="image-1" data-title="{{ producto?.nombre }}"><img class="img-fluid" [src]="producto?.imagen[0].nombre" alt=""></a>
+                        &nbsp;
+                        <div class="btn-group">
+                            <a [href]="producto?.imagen[1].nombre" data-lightbox="image-1" data-title="{{ producto?.nombre }}"><img class="img-fluid" width="160px" height="120px" [src]="producto?.imagen[1].nombre" alt=""></a>
+                            &nbsp;&nbsp;
+                            <a [href]="producto?.imagen[2].nombre" data-lightbox="image-1" data-title="{{ producto?.nombre }}"><img class="img-fluid" width="160px" height="120px" [src]="producto?.imagen[2].nombre" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                        <button (click)="cerrarPreview()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h1>{{ producto?.nombre }}</h1>
+                        <h3 class="text-primary">Precio: ${{ producto?.precio }}</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div> -->
+        </div>
+    </div>
+</div>
