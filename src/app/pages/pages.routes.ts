@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const ROUTES: Routes = [
@@ -9,6 +10,7 @@ const ROUTES: Routes = [
       component: PagesComponent,
       children: [
           { path: 'home', component: HomeComponent },
+          { path: 'detail/:id', component: DetailComponent },
           // { path: '**', component: PagesComponent },
           { path: '', pathMatch: 'full', redirectTo: '/home' }
       ]

@@ -26,7 +26,11 @@
                             "src/assets/dist/css/bootstrap.css",
                             "src/styles.css"
                         ],
-                        "scripts": [],
+                        "scripts": [
+                            "src/assets/dist/js/jquery-3.4.1.min.js",
+                            "src/assets/dist/js/sweetalert.min.js",
+                            "src/assets/dist/js/popper.min.js"
+                        ],
                         "es5BrowserSupport": true
                     },
                     "configurations": {

@@ -16,7 +16,7 @@ export class PreviewComponent implements OnInit {
   ngOnInit() {
     this.previewService.notificacion.subscribe( resp => {
       this.producto = resp;
-      console.log(this.producto);
+      // console.log(this.producto);
     } );
   }
 

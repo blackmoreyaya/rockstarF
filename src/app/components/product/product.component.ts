@@ -12,6 +12,8 @@ export class ProductComponent implements OnInit {
   claseCorazon = 'text-muted';
   bandera = false;
 
+  currentRate = 5;
+
   @Input() productos: Product[] = [];
 
   constructor( public previewService: PreviewService ) { }

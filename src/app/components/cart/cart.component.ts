@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from './cart.service';
+
+// import swal from 'sweetalert';
+declare var swal: any;
+
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +12,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor( public cartService: CartService ) { }
 
   ngOnInit() {
+  }
+
+  closeCart() {
+    this.cartService.closeCart();
+  }
+
+  deleteProductCart() {
+
+    swal({
+      title: '¿Estas seguro de quitar este producto de tu carrito?',
+      text: 'Estas a punto de borrar + nombre de producto',
+      icon: 'warning',
+      buttons: ['Cancelar', 'Aceptar'],
+      dangerMode: true
+    })
+      .then(borrar => {
+        // console.log(borrar);
+        if (borrar) {
+          // this._agremiadoService.borrarAgremiado(agremiado._id)
+          //   .subscribe(borrado => {
+          //     console.log(borrado);
+          //     this.cargarAgremiados();
+          //   });
+          console.log('borrar producto del carrito');
+        }
+      });
+
   }
 
 }

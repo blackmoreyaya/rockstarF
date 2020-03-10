@@ -16,6 +16,7 @@ import { CarouselComponent } from './../components/carousel/carousel.component';
 import { ProductComponent } from '../components/product/product.component';
 import { PreviewComponent } from '../components/preview/preview.component';
 import { CartComponent } from '../components/cart/cart.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CartComponent } from '../components/cart/cart.component';
     CarouselComponent,
     ProductComponent,
     PreviewComponent,
-    CartComponent
+    CartComponent,
+    DetailComponent
   ],
   exports: [
     PagesComponent

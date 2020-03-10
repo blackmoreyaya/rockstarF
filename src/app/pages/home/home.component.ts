@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  ranking: 5,
+                  id: '00001',
                 },
                 {
                   nombre: 'The North Face Unisex, Multi Color',
@@ -55,6 +57,8 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  ranking: 3,
+                  id: '00002',
                 },
                 {
                   nombre: 'Samsung Galaxy Tab Active 2',
@@ -78,6 +82,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  id: '00003',
                 },
                 {
                   nombre: 'Vans Sk8-Hi MTE Shoes',
@@ -101,6 +106,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  id: '00004',
                 },
                 {
                   nombre: 'The North Face Unisex, Multi Color',
@@ -124,6 +130,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  id: '00005',
                 },
                 {
                   nombre: 'Samsung Galaxy Tab Active 2',
@@ -147,6 +154,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  id: '00006',
                 },
                 {
                   nombre: 'Vans Sk8-Hi MTE Shoes',
@@ -170,6 +178,8 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  ranking: 1,
+                  id: '00007',
                 },
                 {
                   nombre: 'The North Face Backpack, Multi Color',
@@ -193,6 +203,8 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  ranking: 0,
+                  id: '00008',
                 },
                 {
                   nombre: 'Samsung Galaxy Tab Active 2',
@@ -216,13 +228,15 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  ranking: 0,
+                  id: '00009',
                 }
             ];
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.productos);
+    // console.log(this.productos);
   }
 
 }

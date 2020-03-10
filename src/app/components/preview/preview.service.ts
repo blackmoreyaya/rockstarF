@@ -24,7 +24,7 @@ export class PreviewService {
   mostrarPreview() {
 
     this.oculto = '';
-    console.log(this.notificacion);
+    // console.log(this.notificacion);
 
   }
 

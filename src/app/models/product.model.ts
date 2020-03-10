@@ -10,6 +10,8 @@ export class Product {
         public categoria?: Category,
         public imagen?: Image[],
         public wishlist?: boolean,
+        public ranking?: number,
+        public maxStock?: number,
         public id?: string
     ) { }
 }

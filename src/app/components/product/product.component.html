@@ -47,27 +47,37 @@
             <div class="card-body">
                 <h4 class="card-title">{{ producto.nombre }}</h4>
                 <h6 class="card-subtitle mb-2 text-muted">{{ producto.categoria.nombre }}</h6>
-                <p class="card-text">
+                <div class="card-text">
                     {{ producto.descripcion }}
-                </p>
-                <ul class="row">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                </ul>
-
-                <div class="buy d-flex justify-content-between align-items-center">
+                </div>
+                <div class="row justify-content-center">
                     <div class="price ">
                         <h5 class="mt-4">$ {{ producto.precio }}</h5>
                     </div>
-                    <a (click)="addWishList(bandera)" class="card-link like">
+                </div>
+                <div class="row justify-content-center">
+                    <ngb-rating rate="{{ producto.ranking | ranking }}" [readonly]="true" max="5">
+                        <ng-template let-fill="fill" let-index="index">
+                            <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </div>
+                <!-- <ul class="row">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul> -->
+                <div class="buy d-flex justify-content-between align-items-center">
+                    <button [routerLink]="['/detail', producto.id]" type="button" class="btn btn-outline-primary mt-3">Ver detalles</button> &nbsp;
+                    <a (click)="addWishList(bandera)" class="card-link like mt-2">
                         <div [class]="claseCorazon">
                             <i class="fa fa-heart pointer"></i>
                         </div>
                     </a>
-                    <button class="btn btn-outline-warning mt-3"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                    &nbsp;
+                    <button class="btn btn-outline-warning mt-3">Agregar al <i class="fa fa-shopping-cart"></i></button>
                 </div>
             </div>
         </div>

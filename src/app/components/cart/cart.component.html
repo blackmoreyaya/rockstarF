@@ -1,3 +1,69 @@
-<p>
-  cart works!
-</p>
+<!-- Modal -->
+<div class="encima animated fadeIn slow" [ngClass]="cartService.oculto">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Tu Carrito</h5>
+                <button (click)="closeCart()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="tableFixHead">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="http://localhost:4200/assets/img/saber.jpg" width="50" height="50" alt=""></td>
+                                <td>Samsung Galaxy Tab Active 2</td>
+                                <td>$258.89</td>
+                                <td><span (click)="deleteProductCart()" class="fa fa-times text-danger pointer"></span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="http://localhost:4200/assets/img/baiken.jpg" width="50" height="50" alt=""></td>
+                                <td>Samsung Galaxy Tab Active 2</td>
+                                <td>$258.89</td>
+                                <td><span class="fa fa-times text-danger pointer"></span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="http://localhost:4200/assets/img/sf.jpg" width="50" height="50" alt=""></td>
+                                <td>Samsung Galaxy Tab Active 2</td>
+                                <td>$258.89</td>
+                                <td><span class="fa fa-times text-danger pointer"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col"> </th>
+                            <th scope="col"> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>Total:</td>
+                            <td>$2350 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
