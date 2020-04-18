@@ -1,0 +1,54 @@
+<div class="table-responsive-lg">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Disponibilidad</th>
+                <th scope="col">Agregar al carrito</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let producto of productos">
+                <tr>
+                    <th><span (click)="deleteProductWish( producto )" class="fa fa-times tick pointer"></span></th>
+                    <td><img class="pointer" [routerLink]="['/detail', producto.id]" src="{{ producto.imagen[0].nombre }}" width="80" height="80" alt=""></td>
+                    <td><b>{{ producto.nombre }}</b></td>
+                    <td>${{ producto.precio }}</td>
+                    <td><span [innerHTML]="producto.maxStock | disponibilidad"></span></td>
+                    <td><button [disabled]="mostrarBoton( producto.maxStock )" class="btn btn-lg btn-outline-warning mt-1"><i class="fa fa-shopping-cart"></i></button></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="oculto">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tbody>
+        <div class="d-flex justify-content-center mb-2">
+            <h1>No hay elementos en tu lista de deseos</h1>
+        </div>
+        <br><br><br><br><br>
+    </table>
+</div>

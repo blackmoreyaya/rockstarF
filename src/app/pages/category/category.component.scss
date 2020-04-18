@@ -1,0 +1,82 @@
+.active {
+    color: black;
+    background-color: #ffff00 !important;
+    border-color: #c7cc00;
+}
+
+.active:hover {
+    border-color: rgba(250, 227, 17, 0.972) !important;
+}
+
+// .custom-slider .span .ng5-slider-span .ng5-slider-selection-bar {
+//     background: rgb(255, 255, 0) !important;
+// }
+::ng-deep {
+    .custom-slider .ng5-slider .ng5-slider-bar {
+        background: #ffe4d1;
+        height: 2px;
+    }
+    .custom-slider .ng5-slider .ng5-slider-selection {
+        background: orange;
+    }
+    .custom-slider .ng5-slider .ng5-slider-pointer {
+        width: 8px;
+        height: 16px;
+        top: auto;
+        /* to remove the default positioning */
+        bottom: 0;
+        background-color: #333;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .custom-slider .ng5-slider .ng5-slider-pointer:after {
+        display: none;
+    }
+    .custom-slider .ng5-slider .ng5-slider-bubble {
+        bottom: 14px;
+    }
+    .custom-slider .ng5-slider .ng5-slider-limit {
+        font-weight: bold;
+        color: #ffff00;
+    }
+    .custom-slider .ng5-slider .ng5-slider-tick {
+        width: 1px;
+        height: 10px;
+        margin-left: 4px;
+        border-radius: 0;
+        background: #ffe4d1;
+        top: -1px;
+    }
+    .custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+        background: #ffff00;
+    }
+}
+
+::ng-deep {
+    .pagination .page-item .page-link {
+        border-radius: 0 !important;
+        color: black;
+        border-color: orange;
+    }
+    .pagination .page-link {
+        // border-top-style: none !important;
+        // border-bottom-style: none !important;
+        background-color: #f6f6f6 !important;
+        color: black !important;
+    }
+}
+
+ngb-pagination ::ng-deep ul>li:not(.active)>a {
+    background-color: #f6f6f6 !important;
+    border-radius: 0 !important;
+}
+
+ngb-pagination ::ng-deep ul>li.active>a {
+    background-color: #ffff00 !important;
+}
+
+ngb-pagination ::ng-deep ul>li.active>a:focus {
+    outline: none !important;
+    border-color: #ffff5a;
+    box-shadow: 0 0 10px #ffff5a;
+}

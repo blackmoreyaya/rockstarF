@@ -12,13 +12,13 @@ declare var swal: any;
 })
 export class CartComponent implements OnInit {
 
-  constructor( public cartService: CartService ) { }
+  constructor( public _cartService: CartService ) { }
 
   ngOnInit() {
   }
 
   closeCart() {
-    this.cartService.closeCart();
+    this._cartService.closeCart();
   }
 
   deleteProductCart() {

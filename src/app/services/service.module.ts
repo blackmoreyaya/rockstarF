@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PreviewService } from '../components/preview/preview.service';
 import { CartService } from '../components/cart/cart.service';
 
+import {
+  ExternosService
+} from './service.index';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -14,7 +18,8 @@ import { CartService } from '../components/cart/cart.service';
   ],
   providers: [
     PreviewService,
-    CartService
+    CartService,
+    ExternosService
   ]
 })
 export class ServiceModule { }

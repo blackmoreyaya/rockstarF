@@ -1,0 +1,52 @@
+<div class="card border-dark width-100 entrada">
+    <div class="card-header font-header bg-warning">
+        Crear cuenta
+    </div>
+    <div class="card-body">
+        <div class="d-flex justify-content-center mb-2">
+            <img src="http://localhost:4200/assets/img/logo3.png" class="img-fluid" alt="">
+        </div>
+        <label>Nombre</label>
+        <div class="input-group mb-2 mr-sm-5">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><span class="fa fa-user"></span></div>
+            </div>
+            <input type="text" class="form-control" placeholder="Cosme Fulanito">
+        </div>
+        <label>Correo electrónico</label>
+        <div class="input-group mb-2 mr-sm-5">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><span class="fa fa-at"></span></div>
+            </div>
+            <input type="email" class="form-control" placeholder="ejemplo@ejemplo.com">
+        </div>
+        <label>Contraseña</label>
+        <div class="input-group mb-2 mr-sm-5">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><span class="fa fa-lock"></span></div>
+            </div>
+            <input type="password" class="form-control" placeholder="Debe tener al menos 6 caracteres">
+        </div>
+        <label>Vuelve a escribir la contraseña</label>
+        <div class="input-group mb-4 mr-sm-5">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><span class="fa fa-lock"></span></div>
+            </div>
+            <input type="password" class="form-control" placeholder="">
+        </div>
+        <button type="button" class="btn btn-warning btn-lg btn-block">Crear cuenta</button>
+        <div class="d-flex justify-content-center">
+            <div class="mr-auto p-1">
+                <p>
+                    Al crear una cuenta, estas aceptando nuestras <a class="text-primary pointer">Condiciones uso</a>
+                </p>
+            </div>
+            <!-- <div class="p-1">
+                </div> -->
+        </div>
+        <hr>
+        <div class="d-flex align-items-center flex-column">
+            <div class="p-1">¿ya tienes una cuenta? <a (click)="showLogin()" class="text-primary pointer">Inicia sesión</a></div>
+        </div>
+    </div>
+</div>

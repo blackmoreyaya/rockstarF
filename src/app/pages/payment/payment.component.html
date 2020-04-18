@@ -1,0 +1,158 @@
+<div class="row entrada">
+    <div class="col-md-12">
+        <div #barra class="progreso">
+            <ul>
+                <li>
+                    <img src="../../../assets/img/direccion.png"><br>
+                    <i class="fa fa-angle-up"></i>
+                    <p>Dirección</p>
+                </li>
+                <li>
+                    <img src="../../../assets/img/paquete.png"><br>
+                    <i class="fa fa-angle-up"></i>
+                    <p>Envío</p>
+                </li>
+                <li>
+                    <img src="../../../assets/img/pagos.png"><br>
+                    <i class="fa fa-angle-up"></i>
+                    <p>Pago</p>
+                </li>
+                <li>
+                    <img src="../../../assets/img/confirmacion.png"><br>
+                    <i class="fa fa-angle-up"></i>
+                    <p>Confirmación</p>
+                </li>
+            </ul>
+        </div>
+        <div class="tab">
+            <div class="card border-warning">
+                <div class="card-header font-header bg-warning">Direccion</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h5 class="card-title">Elige la dirección de envío</h5>
+                            <ng-container *ngFor="let dir of direcciones">
+                                <div class="card border-light mb-3" [attr.id]="dir.id">
+                                    <div class="card-body">
+                                        <P class="mb-0">{{ dir.nombre }}</P>
+                                        <p class="mb-0 mt-0">{{ dir.calle }}</p>
+                                        <p class="mb-0 mt-0">{{ dir.colonia }}</p>
+                                        <p class="mb-0 mt-0">{{ dir.ciudad }}, {{ dir.estado }}, {{ dir.cp }}</p>
+                                        <p class="mt-0">TELEFONO: {{ dir.tel }}</p>
+                                        <button (click)="selectAddress(dir.id)" type="button" class="btn btn-warning btn-block">Enviar a esta dirección</button>
+                                        <br>
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button" class="btn btn-secondary btn-sm">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button> &nbsp;&nbsp;&nbsp;
+                                            <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <div class="col-md-7">
+                            <h5 class="card-title">Agrega una dirección de envío</h5>
+                            <div class="form-group">
+                                <label for="nombreDireccion">Nombre de quien recibe el paquete</label>
+                                <input type="text" class="form-control" id="nombreDireccion">
+                            </div>
+                            <label for="nombreDireccion">Dirección</label>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="cp">Código Postal</label>
+                                        <input #input (keyup)="findCP( input.value )" maxlength="5" type="text" class="form-control" id="cp">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="estado">Estado</label>
+                                        <input type="text" class="form-control" id="estado" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="municipio">Municipio</label>
+                                        <input type="text" class="form-control" id="municipio" disabled>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="ciudad">Ciudad</label>
+                                        <input type="text" class="form-control" id="ciudad" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono</label>
+                                        <input type="text" class="form-control" id="telefono">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="colonia">Colonia</label>
+                                        <select class="form-control" id="colonia">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="referencia">Referencia</label>
+                                    <textarea class="form-control" id="referencia" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-outline-info btn-sm">Guardar dirección</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab">
+            <div class="card border-warning">
+                <div class="card-header">Envio</div>
+                <div class="card-body">
+                    <h5 class="card-title">Danger card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="tab">
+            <div class="card border-warning">
+                <div class="card-header">Pago</div>
+                <div class="card-body">
+                    <h5 class="card-title">Danger card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="tab">
+            <div class="card border-warning">
+                <div class="card-header">Confirmacion</div>
+                <div class="card-body">
+                    <h5 class="card-title">Danger card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-end">
+            <button id="prevBtn" (click)="nextPrev(-1)" type="button" class="btn btn-outline-secondary btn-lg">Anterior</button> &nbsp;&nbsp;&nbsp;
+            <button id="nextBtn" (click)="nextPrev(1)" type="button" class="btn btn-outline-warning btn-lg">Siguiente</button>
+        </div>
+    </div>
+</div>

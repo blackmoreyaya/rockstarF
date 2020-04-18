@@ -10,24 +10,36 @@ import { Product } from './../../models/product.model';
 export class PreviewComponent implements OnInit {
 
   public producto: Product;
+  cantidad = 0;
 
-  constructor( public previewService: PreviewService ) {}
+  constructor( public _previewService: PreviewService ) {}
 
   ngOnInit() {
-    this.previewService.notificacion.subscribe( resp => {
+    this._previewService.notificacion.subscribe( resp => {
       this.producto = resp;
-      // console.log(this.producto);
     } );
   }
 
-  // ngAfterContentInit() {
-  //   this.producto = this.previewService.;
-  //   console.log(this.producto);
-  // }
-
   cerrarPreview() {
 
-    this.previewService.ocultarPreview();
+    this._previewService.ocultarPreview();
+    this.cantidad = 0;
+
+  }
+
+  cambiarValor( valor: number ) {
+
+    if ( this.cantidad >= this.producto.maxStock && valor > 0 ) {
+      this.cantidad = this.producto.maxStock;
+      return;
+    }
+
+    if (this.cantidad <= 0 && valor < 0) {
+      this.cantidad = 0;
+      return;
+    }
+
+    this.cantidad += valor;
 
   }
 

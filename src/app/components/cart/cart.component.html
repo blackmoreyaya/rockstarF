@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="encima animated fadeIn slow" [ngClass]="cartService.oculto">
+<div class="encima entrada" [ngClass]="_cartService.oculto">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,7 +14,7 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Nombre</th>
+                                <th scope="col">Producto</th>
                                 <th scope="col">Precio</th>
                                 <th scope="col"></th>
                             </tr>
@@ -24,19 +24,19 @@
                                 <td><img src="http://localhost:4200/assets/img/saber.jpg" width="50" height="50" alt=""></td>
                                 <td>Samsung Galaxy Tab Active 2</td>
                                 <td>$258.89</td>
-                                <td><span (click)="deleteProductCart()" class="fa fa-times text-danger pointer"></span></td>
+                                <td><span (click)="deleteProductCart()" class="fa fa-times tick pointer"></span></td>
                             </tr>
                             <tr>
                                 <td><img src="http://localhost:4200/assets/img/baiken.jpg" width="50" height="50" alt=""></td>
                                 <td>Samsung Galaxy Tab Active 2</td>
                                 <td>$258.89</td>
-                                <td><span class="fa fa-times text-danger pointer"></span></td>
+                                <td><span class="fa fa-times tick pointer"></span></td>
                             </tr>
                             <tr>
                                 <td><img src="http://localhost:4200/assets/img/sf.jpg" width="50" height="50" alt=""></td>
                                 <td>Samsung Galaxy Tab Active 2</td>
                                 <td>$258.89</td>
-                                <td><span class="fa fa-times text-danger pointer"></span></td>
+                                <td><span class="fa fa-times tick pointer"></span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -61,8 +61,8 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button (click)="closeCart()" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button [routerLink]="['/preview-cart']" (click)="closeCart()" type="button" class="btn btn-warning">Proceder al pago</button>
             </div>
         </div>
     </div>

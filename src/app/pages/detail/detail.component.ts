@@ -38,6 +38,8 @@ export class DetailComponent implements OnInit {
   cantidad = 0;
   rankClientes = 3;
 
+  currentJustify = 'justified';
+
   constructor() { }
 
   ngOnInit() {

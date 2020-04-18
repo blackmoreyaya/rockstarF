@@ -8,7 +8,6 @@ import { Product } from './../../models/product.model';
 })
 export class HomeComponent implements OnInit {
 
-  // agremiados: Agremiado[] = [];
   productos: Product[] = [
                 {
                   nombre: 'Vans Sk8-Hi MTE Shoes',
@@ -33,7 +32,8 @@ export class HomeComponent implements OnInit {
                     },
                   ],
                   ranking: 5,
-                  id: '00001',
+                  maxStock: 15,
+                  id: '00001'
                 },
                 {
                   nombre: 'The North Face Unisex, Multi Color',
@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
                     },
                   ],
                   ranking: 3,
+                  maxStock: 5,
                   id: '00002',
                 },
                 {
@@ -82,6 +83,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  maxStock: 12,
                   id: '00003',
                 },
                 {
@@ -130,6 +132,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  maxStock: 10,
                   id: '00005',
                 },
                 {
@@ -154,6 +157,7 @@ export class HomeComponent implements OnInit {
                       prioridad: 3
                     },
                   ],
+                  maxStock: 12,
                   id: '00006',
                 },
                 {
@@ -179,6 +183,7 @@ export class HomeComponent implements OnInit {
                     },
                   ],
                   ranking: 1,
+                  maxStock: 6,
                   id: '00007',
                 },
                 {
@@ -204,6 +209,7 @@ export class HomeComponent implements OnInit {
                     },
                   ],
                   ranking: 0,
+                  maxStock: 0,
                   id: '00008',
                 },
                 {
@@ -229,6 +235,7 @@ export class HomeComponent implements OnInit {
                     },
                   ],
                   ranking: 0,
+                  maxStock: 5,
                   id: '00009',
                 }
             ];

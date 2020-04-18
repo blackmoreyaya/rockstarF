@@ -8,8 +8,8 @@
 
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav position-static">
-            <a href="#" class="nav-item nav-link active"><img src="assets/img/logo-letra.png" width="120" height="30"></a> -->
-<!-- <a href="#" class="nav-item nav-link active">Home</a>
+            <a href="#" class="nav-item nav-link active"><img src="assets/img/logo-letra.png" width="120" height="30"></a>
+            <a href="#" class="nav-item nav-link active">Home</a>
             <a href="#" class="nav-item nav-link">Profile</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
@@ -18,14 +18,14 @@
                     <a href="#" class="dropdown-item">Sent</a>
                     <a href="#" class="dropdown-item">Drafts</a>
                 </div>
-            </div> -->
-<!-- </div>
+            </div>
+        </div>
         <form class="form-inline">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Buscar...">
-                <div class="input-group-append"> -->
-<!-- <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button> -->
-<!-- <div class="nav-item dropdown">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                    <div class="nav-item dropdown">
                         <button href="#" class="btn btn-outline-warning nav-link dropdown-toggle" data-toggle="dropdown">Todas las categorías</button>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">InboxInboxInboxInboxInboxInboxInbox</a>
@@ -48,7 +48,7 @@
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
     <a href="#" class="navbar-brand">
-        <img src="assets/img/logo-mano.png" width="30" height="30" alt="">
+        <img src="assets/img/logo.png" width="115" height="50" alt="">
     </a>
 
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
@@ -56,31 +56,52 @@
     </button>
 
 
-    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+    <div class="collapse navbar-collapse justify-content-md-between" [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Item 1</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Item 2</a>
             </li>
+            <li class="nav-item">
+
+            </li> -->
         </ul>
+        <div class="form-inline">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar...">
+                <div class="input-group-append">
+                    <!-- <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button> -->
+                    <div ngbDropdown class="nav-item">
+                        <button href="#" id="categorias" class="btn btn-outline-warning nav-link" ngbDropdownToggle>Todas
+                            las categorías
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="categorias">
+                            <ng-container *ngFor="let categoria of categorias">
+                                <button [routerLink]="['/category', categoria.id]" ngbDropdownItem>{{ categoria.nombre }}</button>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="navbar-nav">
             <div ngbDropdown display="dynamic" placement="bottom-right" class="d-inline-block">
-                <a href="#" class="nav-item nav-link" id="dropdownBasic1" ngbDropdownToggle><img src="assets/img/user.png" width="30" height="30"></a>
+                <div class="nav-item nav-link pointer" id="dropdownBasic1" ngbDropdownToggle><img src="assets/img/user.png" width="40" height="40"></div>
                 <!-- <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button> -->
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button ngbDropdownItem>Mi cuenta</button>
+                    <button [routerLink]="['/account']" ngbDropdownItem>Mi cuenta</button>
                     <button ngbDropdownItem>Formas de pago</button>
                     <button ngbDropdownItem>Configuración/Editar</button>
-                    <button ngbDropdownItem>Lista de deseos</button>
+                    <button [routerLink]="['/wish-list']" ngbDropdownItem>Lista de deseos</button>
                     <button ngbDropdownItem>Cerrar sesión</button>
                 </div>
             </div>
             <div class="d-none d-sm-block d-sm-none d-md-block">
                 <span>&nbsp;</span>&nbsp;<span>&nbsp;</span>&nbsp;<span>&nbsp;</span>
             </div>
-            <a (click)="showCart()" class="nav-item nav-link pointer"><img src="assets/img/carrito.png" width="30" height="30"></a>
+            <a (click)="showCart()" class="nav-item nav-link pointer"><img src="assets/img/carrito.png" width="40" height="40"><span class="badge badge-warning">0</span></a>
         </div>
     </div>
 </nav>

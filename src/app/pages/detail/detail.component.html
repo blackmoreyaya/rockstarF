@@ -1,185 +1,188 @@
-<div class="row">
-    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-        <a [href]="producto.imagen[0].nombre" data-lightbox="image-1" data-title="{{ producto.nombre }}"><img class="img-fluid" [src]="producto.imagen[0].nombre" alt=""></a>
-        <div class="btn-group mt-2">
-            <a [href]="producto.imagen[1].nombre" data-lightbox="image-1" data-title="{{ producto.nombre }}"><img class="img-fluid" width="160px" height="120px" [src]="producto.imagen[1].nombre" alt=""></a>
-            &nbsp;&nbsp;
-            <a [href]="producto.imagen[2].nombre" data-lightbox="image-1" data-title="{{ producto.nombre }}"><img class="img-fluid" width="160px" height="120px" [src]="producto.imagen[2].nombre" alt=""></a>
+<div class="container entrada">
+
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+            <a [href]="producto.imagen[0].nombre" data-lightbox="image-1" data-title="{{ producto.nombre }}"><img class="img-fluid" [src]="producto.imagen[0].nombre" alt=""></a>
+            <div class="btn-group mt-2">
+                <a [href]="producto.imagen[1].nombre" data-lightbox="image-1" data-title="{{ producto.nombre }}"><img class="img-fluid" width="160px" height="120px" [src]="producto.imagen[1].nombre" alt=""></a>
+                &nbsp;&nbsp;
+                <a [href]="producto.imagen[2].nombre" data-lightbox="image-1" data-title="{{ producto.nombre }}"><img class="img-fluid" width="160px" height="120px" [src]="producto.imagen[2].nombre" alt=""></a>
+            </div>
         </div>
-    </div>
-    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-        <h1>{{ producto?.nombre }}</h1>
-        <ngb-rating rate="{{ producto.ranking | ranking }}" [readonly]="true" max="5">
-            <ng-template let-fill="fill" let-index="index">
-                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
-            </ng-template>
-        </ngb-rating>
-        <h3 class="text-primary">${{ producto.precio }}</h3>
-        <div class="form-group row">
-            <label class="col-md-2 col-form-label">Color</label>
-            <div class="col-md-4">
-                <select class="form-control">
+        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+            <h1>{{ producto?.nombre }}</h1>
+            <ngb-rating rate="{{ producto.ranking | ranking }}" [readonly]="true" max="5">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+                </ng-template>
+            </ngb-rating>
+            <h3 class="text-primary">${{ producto.precio }}</h3>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Color</label>
+                <div class="col-md-4">
+                    <select class="form-control">
                   <option selected>Choose...</option>
                   <option>...</option>
                 </select>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-2 col-form-label">Talla</label>
-            <div class="col-md-4">
-                <select class="form-control">
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Talla</label>
+                <div class="col-md-4">
+                    <select class="form-control">
                   <option selected>Choose...</option>
                   <option>...</option>
                 </select>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-2 col-form-label">Cantidad</label>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button (click)="cambiarValor(-1)" type="button" class="btn btn-outline-dark"><span class="fa fa-minus"></span></button>
-                    </div>
-                    <input class="form-control" type="number" [value]="cantidad" disabled>
-                    <div class="input-group-append">
-                        <button (click)="cambiarValor(+1)" type="button" class="btn btn-outline-primary"><span class="fa fa-plus"></span></button>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Cantidad</label>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button (click)="cambiarValor(-1)" type="button" class="btn btn-outline-dark"><span class="fa fa-minus"></span></button>
+                        </div>
+                        <input class="form-control" type="number" [value]="cantidad" disabled>
+                        <div class="input-group-append">
+                            <button (click)="cambiarValor(+1)" type="button" class="btn btn-outline-primary"><span class="fa fa-plus"></span></button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-warning btn-lg">Agregar al <i class="fa fa-shopping-cart"></i></button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-secondary btn-lg">Lista de deseos</button>
+            </div>
+            <hr>
         </div>
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-warning btn-lg">Agregar al <i class="fa fa-shopping-cart"></i></button> &nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-secondary btn-lg">Lista de deseos</button>
-        </div>
-        <hr>
     </div>
-</div>
 
-<div class="py-3">
-    <div class="container">
-        <!-- <div class="row"> -->
-        <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"> -->
-        <ngb-tabset [destroyOnHide]="false">
-            <ngb-tab title="Descripción">
-                <ng-template ngbTabContent>
-                    <div class="py-2 bg-light">
-                        <div class="mx-3">
-                            <p>{{ producto.descripcion }}</p>
+    <div class="py-3">
+        <div class="container">
+            <!-- <div class="row"> -->
+            <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"> -->
+            <ngb-tabset [destroyOnHide]="false" [justify]="currentJustify">
+                <ngb-tab title="Descripción">
+                    <ng-template ngbTabContent>
+                        <div class="py-2 bg-light entrada">
+                            <div class="mx-3">
+                                <p>{{ producto.descripcion }}</p>
+                            </div>
                         </div>
-                    </div>
-                </ng-template>
-            </ngb-tab>
-            <ngb-tab title="Reseñas">
-                <ng-template ngbTabContent>
-                    <div class="py-2 bg-light">
-                        <div class="mx-3">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                                    <div class="mx-2">
-                                        <h3>Opiniones de clientes</h3>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <ngb-rating rate="4" [readonly]="true" max="5">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100"
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Reseñas">
+                    <ng-template ngbTabContent>
+                        <div class="py-2 bg-light entrada">
+                            <div class="mx-3">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                        <div class="mx-2">
+                                            <h3>Opiniones de clientes</h3>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <ngb-rating rate="4" [readonly]="true" max="5">
+                                                        <ng-template let-fill="fill" let-index="index">
+                                                            <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100"
                                                                 [class.bad]="index < 2">&#9733;</span>
                                                         </small>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                4 de 5
-                                            </li>
-                                        </ul>
+                                                        </ng-template>
+                                                    </ngb-rating>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    4 de 5
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p> 5 estrellas
+                                            <ngb-progressbar type="info" [value]="33" [striped]="true" [animated]="true"><i>5 estrellas</i></ngb-progressbar>
+                                        </p>
+                                        <p> 4 estrellas
+                                            <ngb-progressbar type="info" [value]="0" [striped]="true" [animated]="true"><i>4 estrellas</i></ngb-progressbar>
+                                        </p>
+                                        <p> 3 estrellas
+                                            <ngb-progressbar type="info" [value]="33" [striped]="true" [animated]="true"><i>3 estrellas</i></ngb-progressbar>
+                                        </p>
+                                        <p> 2 estrellas
+                                            <ngb-progressbar type="info" [value]="33" [striped]="true" [animated]="true"><i>2 estrellas</i></ngb-progressbar>
+                                        </p>
+                                        <p> 1 estrellas
+                                            <ngb-progressbar type="info" [value]="0" [striped]="true" [animated]="true"><i>1 estrellas</i></ngb-progressbar>
+                                        </p>
                                     </div>
-                                    <p> 5 estrellas
-                                        <ngb-progressbar type="info" [value]="33" [striped]="true" [animated]="true"><i>5 estrellas</i></ngb-progressbar>
-                                    </p>
-                                    <p> 4 estrellas
-                                        <ngb-progressbar type="info" [value]="0" [striped]="true" [animated]="true"><i>4 estrellas</i></ngb-progressbar>
-                                    </p>
-                                    <p> 3 estrellas
-                                        <ngb-progressbar type="info" [value]="33" [striped]="true" [animated]="true"><i>3 estrellas</i></ngb-progressbar>
-                                    </p>
-                                    <p> 2 estrellas
-                                        <ngb-progressbar type="info" [value]="33" [striped]="true" [animated]="true"><i>2 estrellas</i></ngb-progressbar>
-                                    </p>
-                                    <p> 1 estrellas
-                                        <ngb-progressbar type="info" [value]="0" [striped]="true" [animated]="true"><i>1 estrellas</i></ngb-progressbar>
-                                    </p>
-                                </div>
-                                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                                    <div class="py-0">
-                                        <h4>Nombre del cliente</h4>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <ngb-rating rate="{{ rankClientes | ranking }}" [readonly]="true" max="5">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+                                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                                        <div class="py-0">
+                                            <h4>Nombre del cliente</h4>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <ngb-rating rate="{{ rankClientes | ranking }}" [readonly]="true" max="5">
+                                                        <ng-template let-fill="fill" let-index="index">
+                                                            <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
                                                             </small>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                Titulo del comentario
-                                            </li>
-                                        </ul>
-                                        <p class="font-italic">19 Agosto 2020</p>
-                                        <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi modi reprehenderit ipsam nesciunt? Quam necessitatibus dignissimos provident, voluptas odit, reprehenderit, sint dolor et reiciendis consequatur
-                                            sunt similique ea aliquid.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="py-0">
-                                        <h4>Nombre del cliente</h4>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <ngb-rating rate="5" [readonly]="true" max="5">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100"
+                                                        </ng-template>
+                                                    </ngb-rating>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    Titulo del comentario
+                                                </li>
+                                            </ul>
+                                            <p class="font-italic">19 Agosto 2020</p>
+                                            <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi modi reprehenderit ipsam nesciunt? Quam necessitatibus dignissimos provident, voluptas odit, reprehenderit, sint dolor et reiciendis consequatur
+                                                sunt similique ea aliquid.</p>
+                                            <hr>
+                                        </div>
+                                        <div class="py-0">
+                                            <h4>Nombre del cliente</h4>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <ngb-rating rate="5" [readonly]="true" max="5">
+                                                        <ng-template let-fill="fill" let-index="index">
+                                                            <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100"
                                                                 [class.bad]="index < 2">&#9733;</span>
                                                         </small>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                Titulo del comentario
-                                            </li>
-                                        </ul>
-                                        <p class="font-italic">19 Agosto 2020</p>
-                                        <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi modi reprehenderit ipsam nesciunt? Quam necessitatibus dignissimos provident, voluptas odit, reprehenderit, sint dolor et reiciendis consequatur
-                                            sunt similique ea aliquid.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="py-0">
-                                        <h4>Nombre del cliente</h4>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <ngb-rating rate="2" [readonly]="true" max="5">
-                                                    <ng-template let-fill="fill" let-index="index">
-                                                        <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100"
+                                                        </ng-template>
+                                                    </ngb-rating>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    Titulo del comentario
+                                                </li>
+                                            </ul>
+                                            <p class="font-italic">19 Agosto 2020</p>
+                                            <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi modi reprehenderit ipsam nesciunt? Quam necessitatibus dignissimos provident, voluptas odit, reprehenderit, sint dolor et reiciendis consequatur
+                                                sunt similique ea aliquid.</p>
+                                            <hr>
+                                        </div>
+                                        <div class="py-0">
+                                            <h4>Nombre del cliente</h4>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <ngb-rating rate="2" [readonly]="true" max="5">
+                                                        <ng-template let-fill="fill" let-index="index">
+                                                            <small><span style="font-size: 1.5rem;" class="star" [class.filled]="fill === 100"
                                                                 [class.bad]="index < 2">&#9733;</span>
                                                         </small>
-                                                    </ng-template>
-                                                </ngb-rating>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                Titulo del comentario
-                                            </li>
-                                        </ul>
-                                        <p class="font-italic">19 Agosto 2020</p>
-                                        <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi modi reprehenderit ipsam nesciunt? Quam necessitatibus dignissimos provident, voluptas odit, reprehenderit, sint dolor et reiciendis consequatur
-                                            sunt similique ea aliquid.</p>
-                                        <hr>
+                                                        </ng-template>
+                                                    </ngb-rating>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    Titulo del comentario
+                                                </li>
+                                            </ul>
+                                            <p class="font-italic">19 Agosto 2020</p>
+                                            <p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur animi modi reprehenderit ipsam nesciunt? Quam necessitatibus dignissimos provident, voluptas odit, reprehenderit, sint dolor et reiciendis consequatur
+                                                sunt similique ea aliquid.</p>
+                                            <hr>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- </div> -->
-                </ng-template>
-            </ngb-tab>
-        </ngb-tabset>
+                        <!-- </div> -->
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
     </div>
-    <!-- </div> -->
-    <!-- </div> -->
 </div>

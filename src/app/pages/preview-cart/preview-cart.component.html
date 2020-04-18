@@ -1,0 +1,272 @@
+<!-- <div class="table-responsive-lg">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Disponibilidad</th>
+                <th scope="col">Agregar al carrito</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let producto of productos">
+                <tr>
+                    <th><span (click)="deleteProductWish( producto )" class="fa fa-times tick pointer"></span></th>
+                    <td><img class="pointer" [routerLink]="['/detail', producto.id]" src="{{ producto.imagen[0].nombre }}" width="80" height="80" alt=""></td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td><span [innerHTML]="producto.maxStock | disponibilidad"></span></td>
+                    <td><button [disabled]="mostrarBoton( producto.maxStock )" class="btn btn-lg btn-outline-warning mt-1"><i
+                class="fa fa-shopping-cart"></i></button></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div> -->
+<!-- 
+<div class="row">
+    <div class="col-8">
+        <div>
+            <div class="" style="padding-left:190px">
+                <div class="" style="width:190px;margin-left:-190px;float:left;">
+                    <a class="col-3" href="">
+                        <img src="https://m.media-amazon.com/images/I/81S7dmSPhAL._AC_AA180_.jpg" alt="" width="180" height="180" class="">
+                    </a>
+                </div>
+                <div class="a-fixed-left-grid-col a-col-right" style="padding-left:0%;float:left;">
+
+                    <ul class="a-unordered-list a-nostyle a-vertical a-spacing-mini">
+                        <li><span class="a-list-item">
+                  <a class="a-link-normal sc-product-link" target="_self" rel="noopener"
+                    href="/gp/product/B07BZ3L76B/ref=ox_sc_act_title_1?smid=A2YI6HF5K1B9&amp;psc=1">
+  
+                    <span class="a-size-medium sc-product-title">
+                      Mega Man X: Legacy Collection 1 + 2 for PlayStation 4 - Collector's Edition
+                    </span>
+                            </a>
+                            <span class="a-size-base sc-product-creator">
+                    por Capcom
+                  </span>
+                            </span>
+                        </li>
+                        <li><span class="a-list-item">
+                  <span class="a-size-small a-color-secondary sc-product-binding">
+                    Videojuego
+                  </span>
+
+                            </span>
+                        </li>
+                        <li><span class="a-list-item">
+                  <span class="a-size-small a-color-success sc-product-availability">
+                    Disponible
+                  </span>
+                            </span>
+                        </li>
+                        <li><span class="a-list-item">
+                  <span class="a-size-small a-color-secondary sc-seller">
+                    Enviado desde: <a href="/gp/help/seller/at-a-glance.html/ref=ox_sc_seller_act_1?seller=A2YI6HF5K1B9"
+                      target="AmazonHelp" class=""
+                      onclick="return amz_js_PopWin('/gp/help/seller/at-a-glance.html/ref=ox_sc_seller_act_1?seller=A2YI6HF5K1B9','AmazonHelp','width=590,height=420,resizable=1,scrollbars=1,toolbar=1,status=1');">Game
+                      Cool!</a>
+                  </span>
+                            </span>
+                        </li>
+                        <li><span class="a-list-item">
+                  <span class="sc-invisible-when-no-js">
+                    <span class="a-size-small a-color-secondary">
+                      Opciones de regalo no disponibles.
+                      <a href="/gp/help/customer/display.html/ref=ox_sc_gift?pop-up=1&amp;nodeId=200894930"
+                        target="AmazonHelp" class=""
+                        onclick="return amz_js_PopWin('/gp/help/customer/display.html/ref=ox_sc_gift?pop-up=1&amp;nodeId=200894930','AmazonHelp','width=340,height=340,resizable=1,scrollbars=1,toolbar=1,status=1');"><span
+                          class="a-size-small">
+                          <span class="a-offscreen">
+                            Opciones de regalo no disponibles.
+                          </span> Más información
+                            </span>
+                            </a>
+                            </span>
+
+
+                            </span>
+                            </span>
+                        </li>
+
+                    </ul>
+                    <div class="a-row sc-action-links">
+                        <span class="sc-action-quantity" data-old-value="1">
+                <span class="sc-invisible-when-no-js">
+                  <span class="a-dropdown-container" style="display: none;"><label
+                      class="a-native-dropdown">Cantidad:<span class="sc-offscreen-label"
+                        aria-label="Cant."></span></label><select name="quantity" autocomplete="off" data-a-touch-header="Cant." tabindex="0" class="a-native-dropdown a-declarative" aria-pressed="false">
+  
+  
+                      <option value="0" data-a-css-class="quantity-option">
+                        0 (Eliminar)
+                      </option>
+                      <option value="1" data-a-css-class="quantity-option" selected="">
+                        1
+                      </option>
+                      <option value="2" data-a-css-class="quantity-option">
+                        2
+                      </option>
+                      <option value="3" data-a-css-class="quantity-option">
+                        3
+                      </option>
+                      <option value="4" data-a-css-class="quantity-option">
+                        4
+                      </option>
+                      <option value="5" data-a-css-class="quantity-option">
+                        5
+                      </option>
+  
+                      <option value="6" data-a-css-class="quantity-option">
+                        6
+                      </option>
+  
+                      <option value="7" data-a-css-class="quantity-option">
+                        7
+                      </option>
+  
+                      <option value="8" data-a-css-class="quantity-option">
+                        8
+                      </option>
+  
+                      <option value="9" data-a-css-class="quantity-option">
+                        9
+                      </option>
+                      <option value="10" data-a-css-class="quantity-option quantity-option-10">
+                        10+
+                      </option>
+                    </select><span tabindex="-1" data-a-class="quantity" class="a-button a-button-dropdown a-button-small quantity" id="a-autoid-0" aria-hidden="true" style="min-width: 0.909091%;"><span class="a-button-inner"><span class="a-button-text a-declarative"
+                          data-action="a-dropdown-button" role="button" aria-hidden="true" id="a-autoid-0-announce"><span
+                            class="a-dropdown-label">Cantidad:<span class="sc-offscreen-label"
+                              aria-label="Cant."></span></span><span class="a-dropdown-prompt">
+                            10+
+                          </span></span><i class="a-icon a-icon-dropdown"></i></span>
+                        </span>
+                        </span>
+
+                        <input type="text" maxlength="3" value="1" autocomplete="off" name="quantityBox" class="a-input-text a-width-small sc-quantity-textfield sc-hidden" aria-label="Cant." style="display: inline-block;">
+                        <span class="a-spacing-top-small">
+                    <span class="a-button a-button-primary a-button-small sc-update-link aok-hidden" id="a-autoid-1"><span
+                        class="a-button-inner"><a href="javascript:void(0);" data-action="update" class="a-button-text"
+                          role="button" id="a-autoid-1-announce">
+                          Actualizar
+  
+                          <span class="aok-offscreen">Mega Man X: Legacy Collection 1 + 2 for PlayStation 4 - Collector's
+                            Edition</span>
+                        </a>
+                        </span>
+                        </span>
+
+                        </span>
+                        </span>
+                        <noscript>
+                  <span>
+                    <span>
+                      <input type="text" maxlength="3" value="1" name="quantity.C4471f3f2-5117-4888-afa6-499001438db9"
+                        class="a-input-text a-width-small a-spacing-mini" />
+  
+                    </span>
+  
+                    <input type="submit" name="submit.update-quantity.C4471f3f2-5117-4888-afa6-499001438db9"
+                      value="Actualizar" />
+  
+  
+                  </span>
+                </noscript>
+                        </span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-size-small sc-action-delete">
+                <span class="a-declarative" data-action="sc-item-action"
+                  data-sc-item-action="{&quot;itemID&quot;:&quot;C4471f3f2-5117-4888-afa6-499001438db9&quot;,&quot;itemType&quot;:&quot;active&quot;,&quot;isWishListItem&quot;:0,&quot;action&quot;:&quot;delete&quot;,&quot;isFresh&quot;:0}">
+                  <input type="submit" name="submit.delete.C4471f3f2-5117-4888-afa6-499001438db9" value="Eliminar"
+                    aria-label="Eliminar Mega Man X: Legacy Collection 1 + 2 for PlayStation 4 - Collector's Edition">
+                </span>
+                        </span><i class="a-icon a-icon-text-separator" role="img" aria-label="|"></i><span class="a-size-small sc-action-save-for-later">
+                <span class="a-declarative" data-action="sc-item-action"
+                  data-sc-item-action="{&quot;itemID&quot;:&quot;C4471f3f2-5117-4888-afa6-499001438db9&quot;,&quot;itemType&quot;:&quot;active&quot;,&quot;isWishListItem&quot;:0,&quot;action&quot;:&quot;save-for-later&quot;,&quot;isFresh&quot;:0}">
+                  <input type="submit" name="submit.save-for-later.C4471f3f2-5117-4888-afa6-499001438db9"
+                    value="Guardar para más tarde"
+                    aria-label="Guardar para más tarde Mega Man X: Legacy Collection 1 + 2 for PlayStation 4 - Collector's Edition">
+                </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <p class="a-spacing-small">
+            <span class="a-size-medium a-color-price sc-price sc-white-space-nowrap sc-product-price sc-price-sign a-text-bold">
+          $519.00
+        </span>
+        </p>
+    </div>
+    <div class="col-2">
+        someting
+    </div>
+</div> -->
+
+<div class="row entrada">
+    <div class="col-lg-9 col-md-12">
+        <ng-container *ngFor="let producto of productos">
+            <div class="row">
+                <div class="col-sm-3" align="center">
+                    <div class="limite">
+                        <img class="pointer" [routerLink]="['/detail', producto.id]" src="{{ producto.imagen[0].nombre }}" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="d-flex justify-content-end">
+                        <span (click)="deleteProductCart( producto )" class="fa fa-times tick pointer"></span>
+                    </div>
+                    <ul style="list-style-type:none;">
+                        <li class="row titulo-producto">
+                            {{ producto.nombre }}
+                        </li>
+                        <li class="row">
+                            {{ producto.categoria.nombre }}
+                        </li>
+                        <li class="row">
+                            <span [innerHTML]="producto.maxStock | disponibilidad"></span>
+                        </li>
+                        <li class="row">
+                            <div class="form-group row">
+                                <label class="col-md-2 col-form-label">Cantidad</label>
+                                <div class="col-md-5">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button (click)="cambiarValor(-1, producto.maxStock)" type="button" class="btn btn-outline-dark">
+                        <span class="fa fa-minus"></span>
+                      </button>
+                                        </div>
+                                        <input class="form-control" type="number" [value]="cantidad" disabled>
+                                        <div class="input-group-append">
+                                            <button (click)="cambiarValor(+1, producto.maxStock)" type="button" class="btn btn-outline-primary">
+                        <span class="fa fa-plus"></span>
+                      </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-2" align="center">
+                    <span class="precio-producto">${{ producto.precio}}</span>
+                </div>
+            </div>
+            <hr class="divisor">
+        </ng-container>
+    </div>
+    <div class="col-lg-3 col-md-12 align-self-start">
+        <div class="card border-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Subtotal <span class="titulo-producto">(3 productos)</span>: <span class="text-danger">$2555.00</span></h5>
+                <button [routerLink]="['/payment']" type="button" class="btn btn-warning btn-lg btn-block">Proceder al
+          pago</button>
+            </div>
+        </div>
+    </div>
+</div>

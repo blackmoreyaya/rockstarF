@@ -6,6 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+// RUTAS
+import { PAGES_ROUTING } from '../pages/pages.routes';
+
+
 @NgModule({
   exports: [
     HeaderComponent,
@@ -17,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    PAGES_ROUTING
   ]
 })
 export class SharedModule { }

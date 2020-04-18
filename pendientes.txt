@@ -15,3 +15,8 @@ Parallax efect
 
 
 CERRAR EL MODAL DEL CARRITO checar un eeror del sweet alert
+
+
+
+
+NOMBRE CORREO CONTRASEÑA CONTRASEÑA
