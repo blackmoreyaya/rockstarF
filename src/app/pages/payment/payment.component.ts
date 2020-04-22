@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, QueryList, ViewChildren } fro
 import { Router } from '@angular/router';
 import { Address } from 'src/app/models/address.model';
 import { ExternosService } from 'src/app/services/service.index';
-// import { ExternosService } from 'src/app/services/service.index';
+import { Card } from 'src/app/models/card.model';
 
 declare var swal: any;
 
@@ -12,6 +12,40 @@ declare var swal: any;
   styleUrls: [ './payment.component.css' ]
 })
 export class PaymentComponent implements OnInit {
+
+  meses = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+  years = [];
+
+  tarjetas: Card[] = [
+    {
+      numero: '1234 1234 1234 0003',
+      nombre: 'Erick Daniel Gonzalez Aguilar',
+      tipo: 'Visa',
+      vencimiento: '01/2023',
+      id: '1'
+    },
+    {
+      numero: '1234 1234 1234 1234',
+      nombre: 'Erick Daniel Gonzalez Aguilar',
+      tipo: 'Mastercard',
+      vencimiento: '01/2023',
+      id: '2'
+    },
+    {
+      numero: '1234 1234 1234 4567',
+      nombre: 'Erick Daniel Gonzalez Aguilar',
+      tipo: 'Visa',
+      vencimiento: '01/2023',
+      id: '3'
+    },
+    {
+      numero: '1234 1234 1234 5689',
+      nombre: 'Erick Daniel Gonzalez Aguilar',
+      tipo: 'Mastercard',
+      vencimiento: '01/2023',
+      id: '4'
+    }
+  ];
 
   direcciones: Address[] = [
     {
@@ -39,19 +73,31 @@ export class PaymentComponent implements OnInit {
   ];
 
   tabActual = 0;
+
   @ViewChild( 'barra' )  barra: ElementRef;
-  // @ViewChildren( 'barra' )  barras: QueryList<ElementRef>;
+
+  showTarjetas = 'oculto';
+  addTarjeta = 'oculto';
 
   constructor( private router: Router,
                 public _externoService: ExternosService ) { }
 
   ngOnInit() {
     this.showTab( this.tabActual );
-    // console.log( this.barra.nativeElement.children[0].children[0] );
-    // this.barras.forEach( barra => {
-    //   console.log(barra);
-    // });
-    // console.log(document.getElementsByClassName('tab'));
+    this.yearsFunctions();
+  }
+
+  yearsFunctions () {
+
+    let currentYear = new Date().getFullYear(), years = [];
+    let finalYear = 2031;
+
+    while ( currentYear <= finalYear) {
+      years.push(currentYear++);
+    }
+
+    this.years = years;
+
   }
 
   showTab( n: number ) {
@@ -199,47 +245,15 @@ export class PaymentComponent implements OnInit {
     let imagen = x.querySelectorAll('img')[0];
     imagen.className += 'box bounce-1';
 
-    // let icon = x.querySelectorAll('.fa')[0];
-    // // tslint:disable-next-line: prefer-const
-    // // let barra = x.querySelectorAll('.fa::after')[0];
-
-    // icon.className = icon.className.replace('fa fa-angle-up', 'fa fa-check');
-    // icon.style.background = 'red';
-
-    // x.style.background = 'red';
-
-
-    // let nodo = n + 1;
-    // console.log(btn);
-    // console.log(n);
-    // if ( btn === 'actual' ) {
-    //     tslint:disable-next-line: prefer-const
-    //     let result = document.querySelectorAll('ul li:nth-child(' + nodo + ') .fa')[0] as HTMLElement;
-    //     result.style.background = 'red';
-    // }
-
-    // if ( btn === 'atras' ) {
-    //     tslint:disable-next-line: prefer-const
-    //     let result = document.querySelectorAll('ul li:nth-child(' + nodo + ') .fa')[0] as HTMLElement;
-    //     result.style.background = 'grey';
-    // }
-
-    // if ( btn === 'sig') {
-    //   tslint:disable-next-line: prefer-const
-    //   let actual = document.querySelectorAll('ul li:nth-child(' + (nodo) + ') .fa')[0] as HTMLElement;
-    //   actual.style.background = 'yellow';
-    // }
-    // console.log(result);
-    // console.log(n);
   }
 
   selectAddress( id: string ) {
 
     // tslint:disable-next-line: forin
     for (let i in this.direcciones) {
-      document.getElementById(this.direcciones[i].id).className = document.getElementById(this.direcciones[i].id).className.replace('card border-warning mb-3', 'card border-light mb-3');
+      document.getElementById(this.direcciones[i].id).className = document.getElementById(this.direcciones[i].id).className.replace('card border-danger mb-3', 'card border-light mb-3');
     }
-    document.getElementById(id).className = document.getElementById(id).className.replace('card border-light mb-3', 'card border-warning mb-3');
+    document.getElementById(id).className = document.getElementById(id).className.replace('card border-light mb-3', 'card border-danger mb-3');
 
   }
 
@@ -265,6 +279,40 @@ export class PaymentComponent implements OnInit {
       //     colonia: resp.colonias
       //   }
       });
+
+  }
+
+  pagoRadio( event: any ) {
+
+    if ( event.target.value === 'credito' ) {
+
+      this.showTarjetas = '';
+
+    } else {
+
+      this.showTarjetas = 'oculto';
+      this.addTarjeta = 'oculto';
+      this.visaMaster( '0' );
+
+    }
+
+  }
+
+  visaMaster ( id: string ) {
+
+    // tslint:disable-next-line: forin
+    for (let i in this.tarjetas) {
+      document.getElementById('tarjeta' + (this.tarjetas[i].id)).className = document.getElementById('tarjeta' + (this.tarjetas[i].id)).className.replace('table-warning visaMaster pointer', 'visaMaster pointer');
+    }
+    if ( id === '0') {
+      return;
+    }
+    document.getElementById('tarjeta' + id).className = document.getElementById('tarjeta' + id).className.replace('visaMaster pointer', 'table-warning visaMaster pointer');
+  }
+
+  showAddTarjeta() {
+
+    this.addTarjeta = '';
 
   }
 
