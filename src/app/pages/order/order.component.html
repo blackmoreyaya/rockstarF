@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border-warning entrada">
+                <div class="card-header font-header bg-warning">Mis pedidos</div>
+                <div class="card-body">
+                    <ng-container *ngFor="let pedido of pedidos">
+                        <ngb-accordion [closeOthers]="true" [activeIds]="primerAbierto">
+                            <ngb-panel [id]="pedido.id" [title]="'Número de pedido: ' + pedido.id">
+                                <ng-template ngbPanelContent>
+                                    <h4 class="card-subtitle">Fecha del pedido: {{ pedido.fecha }}</h4>
+                                    <table class="table">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Producto</th>
+                                                <th scope="col">Cantidad</th>
+                                                <th scope="col">Precio</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <ng-container *ngFor="let producto of pedido.productos">
+                                                <tr class="table-primary">
+                                                    <th>{{ producto.nombre }}</th>
+                                                    <th>{{ producto.pedidoCantidad }}</th>
+                                                    <th>${{ producto.pedidoPrecio | number : '1.2-2' }}</th>
+                                                </tr>
+                                            </ng-container>
+                                            <tr class="table-secondary">
+                                                <th>Forma de pago:</th>
+                                                <th colspan="2" *ngIf="pedido.metodoPago">{{ pedido.metodoPago.tipo }} con terminación {{ pedido.metodoPago.numero | slice:-4 }}</th>
+                                                <th colspan="2" *ngIf="pedido.paypal">{{ pedido.paypal }}</th>
+                                            </tr>
+                                            <tr class="table-secondary">
+                                                <th>Forma de envío</th>
+                                                <th>{{ pedido.envio }}</th>
+                                                <th>$100</th>
+                                            </tr>
+                                            <tr class="table-secondary">
+                                                <th colspan="2">TOTAL:</th>
+                                                <th>${{ pedido.pagoTotal | number : '1.2-2' }}</th>
+                                            </tr>
+                                            <tr [innerHTML]="pedido.status | orderStatus"></tr>
+                                        </tbody>
+                                    </table>
+                                </ng-template>
+                            </ngb-panel>
+                        </ngb-accordion>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

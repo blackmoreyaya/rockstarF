@@ -28,6 +28,9 @@ import { FormsModule } from '@angular/forms';
 import { AccountComponent } from './account/account.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PreviewCartComponent } from './preview-cart/preview-cart.component';
+import { AddressComponent } from './address/address.component';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { PreviewCartComponent } from './preview-cart/preview-cart.component';
     CategoryComponent,
     AccountComponent,
     PaymentComponent,
-    PreviewCartComponent
+    PreviewCartComponent,
+    AddressComponent,
+    CreditCardComponent,
+    OrderComponent
   ],
   exports: [
     PagesComponent

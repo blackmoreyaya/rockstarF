@@ -92,8 +92,7 @@
                 <!-- <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button> -->
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <button [routerLink]="['/account']" ngbDropdownItem>Mi cuenta</button>
-                    <button ngbDropdownItem>Formas de pago</button>
-                    <button ngbDropdownItem>Configuración/Editar</button>
+                    <button [routerLink]="['/order']" ngbDropdownItem>Pedidos</button>
                     <button [routerLink]="['/wish-list']" ngbDropdownItem>Lista de deseos</button>
                     <button ngbDropdownItem>Cerrar sesión</button>
                 </div>

@@ -10,6 +10,9 @@ import { CategoryComponent } from './category/category.component';
 import { AccountComponent } from './account/account.component';
 import { PreviewCartComponent } from './preview-cart/preview-cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { AddressComponent } from './address/address.component';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -26,6 +29,9 @@ const ROUTES: Routes = [
           { path: 'profile', component: ProfileComponent },
           { path: 'preview-cart', component: PreviewCartComponent },
           { path: 'payment', component: PaymentComponent },
+          { path: 'address', component: AddressComponent },
+          { path: 'credit-debit-card', component: CreditCardComponent },
+          { path: 'order', component: OrderComponent },
           // { path: '**', component: PagesComponent },
           { path: '', pathMatch: 'full', redirectTo: '/home' }
       ]

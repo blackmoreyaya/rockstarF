@@ -210,7 +210,7 @@
 
 <div class="row entrada">
     <div class="col-lg-9 col-md-12">
-        <ng-container *ngFor="let producto of productos">
+        <ng-container *ngFor="let producto of productos; let i = index">
             <div class="row">
                 <div class="col-sm-3" align="center">
                     <div class="limite">
@@ -237,15 +237,15 @@
                                 <div class="col-md-5">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button (click)="cambiarValor(-1, producto.maxStock)" type="button" class="btn btn-outline-dark">
-                        <span class="fa fa-minus"></span>
-                      </button>
+                                            <button (click)="cambiarValor(-1, producto.maxStock, i)" type="button" class="btn btn-outline-dark">
+                                              <span class="fa fa-minus"></span>
+                                            </button>
                                         </div>
-                                        <input class="form-control" type="number" [value]="cantidad" disabled>
+                                        <input class="form-control" type="number" [value]="cantidad[i]" disabled>
                                         <div class="input-group-append">
-                                            <button (click)="cambiarValor(+1, producto.maxStock)" type="button" class="btn btn-outline-primary">
-                        <span class="fa fa-plus"></span>
-                      </button>
+                                            <button (click)="cambiarValor(+1, producto.maxStock, i)" type="button" class="btn btn-outline-primary">
+                                              <span class="fa fa-plus"></span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

@@ -12,6 +12,8 @@ export class Product {
         public wishlist?: boolean,
         public ranking?: number,
         public maxStock?: number,
+        public pedidoCantidad?: number,
+        public pedidoPrecio?: number,
         public id?: string
     ) { }
 }

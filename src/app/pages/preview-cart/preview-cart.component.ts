@@ -90,11 +90,26 @@ export class PreviewCartComponent implements OnInit {
     },
   ];
 
-  cantidad = 0;
+  cantidad = [];
 
   constructor() { }
 
   ngOnInit() {
+
+    this.llenarCantidad();
+
+  }
+
+  llenarCantidad() {
+
+    let cantidad = [];
+    // tslint:disable-next-line: forin
+    for (const i in this.productos) {
+      cantidad[i] = 0;
+    }
+
+    this.cantidad = cantidad;
+
   }
 
   mostrarBoton(maxStock: number) {
@@ -131,19 +146,19 @@ export class PreviewCartComponent implements OnInit {
 
   }
 
-  cambiarValor(valor: number, maxStock: number) {
+  cambiarValor(valor: number, maxStock: number, index: number) {
 
-    if (this.cantidad >= maxStock && valor > 0) {
-      this.cantidad = maxStock;
+    if (this.cantidad[index] >= maxStock && valor > 0) {
+      this.cantidad[index] = maxStock;
       return;
     }
 
-    if (this.cantidad <= 0 && valor < 0) {
-      this.cantidad = 0;
+    if (this.cantidad[index] <= 0 && valor < 0) {
+      this.cantidad[index] = 0;
       return;
     }
 
-    this.cantidad += valor;
+    this.cantidad[index] += valor;
 
   }
 

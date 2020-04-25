@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Address } from 'src/app/models/address.model';
 import { ExternosService } from 'src/app/services/service.index';
 import { Card } from 'src/app/models/card.model';
+import { Product } from 'src/app/models/product.model';
 
 declare var swal: any;
 
@@ -70,6 +71,61 @@ export class PaymentComponent implements OnInit {
       tel: '7224213955',
       id: '2'
     }
+  ];
+
+  productos: Product[] = [
+    {
+      nombre: 'Vans Sk8-Hi MTE Shoes',
+      precio: 258.89,
+      descripcion: 'The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool.',
+      categoria: {
+        nombre: 'Zapatería'
+      },
+      wishlist: false,
+      imagen: [
+        {
+          nombre: 'http://localhost:4200/assets/img/baiken.jpg',
+          prioridad: 1
+        },
+        {
+          nombre: 'http://localhost:4200/assets/img/baiken.jpg',
+          prioridad: 2
+        },
+        {
+          nombre: 'http://localhost:4200/assets/img/baiken.jpg',
+          prioridad: 3
+        },
+      ],
+      ranking: 5,
+      maxStock: 15,
+      id: '00001'
+    },
+    {
+      nombre: 'The North Face Unisex, Multi Color',
+      precio: 500.00,
+      descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestias assumenda vero architecto sapiente, cupiditate nostrum nulla deserunt accusantium fuga! Hic tempora unde nulla totam quos quas, et libero nostrum?',
+      categoria: {
+        nombre: 'Mochilas'
+      },
+      wishlist: true,
+      imagen: [
+        {
+          nombre: 'http://localhost:4200/assets/img/saber.jpg',
+          prioridad: 1
+        },
+        {
+          nombre: 'http://localhost:4200/assets/img/saber.jpg',
+          prioridad: 2
+        },
+        {
+          nombre: 'http://localhost:4200/assets/img/saber.jpg',
+          prioridad: 3
+        },
+      ],
+      ranking: 3,
+      maxStock: 0,
+      id: '00002',
+    },
   ];
 
   tabActual = 0;
